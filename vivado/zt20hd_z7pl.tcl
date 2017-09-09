@@ -87,7 +87,7 @@ if { $::argc > 0 } {
 set orig_proj_dir "[file normalize "$origin_dir/"]"
 
 # Create project
-create_project zt20hd_z7pl ./zt20hd_z7pl
+create_project zt20hd_z7pl ./
 
 # Set the directory path for the new project
 set proj_dir [get_property directory [current_project]]
@@ -116,6 +116,7 @@ set obj [get_filesets sources_1]
 set files [list \
  "[file normalize "$origin_dir/../hw/syn/bd/zynq_sys/zynq_sys.bd"]"\
  "[file normalize "$origin_dir/../hw/syn/bd/zynq_sys/hdl/zynq_sys_wrapper.v"]"\
+ "[file normalize "$origin_dir/../hw/syn/zt20hd_z7pl.v"]"\
 ]
 add_files -norecurse -fileset $obj $files
 
