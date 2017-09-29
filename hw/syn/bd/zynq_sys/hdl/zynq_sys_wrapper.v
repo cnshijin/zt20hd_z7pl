@@ -1,7 +1,7 @@
 //Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2015.4 (win64) Build 1412921 Wed Nov 18 09:43:45 MST 2015
-//Date        : Fri Sep 08 23:51:30 2017
+//Date        : Fri Sep 29 22:52:57 2017
 //Host        : DESKTOP-VTTOS7H running 64-bit major release  (build 9200)
 //Command     : generate_target zynq_sys_wrapper.bd
 //Design      : zynq_sys_wrapper
@@ -32,6 +32,7 @@ module zynq_sys_wrapper
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
     gpio_0_tri_io,
+    hdmi_clk,
     hdmi_out_active_video,
     hdmi_out_data,
     hdmi_out_field,
@@ -63,6 +64,7 @@ module zynq_sys_wrapper
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
   inout [63:0]gpio_0_tri_io;
+  output hdmi_clk;
   output hdmi_out_active_video;
   output [15:0]hdmi_out_data;
   output hdmi_out_field;
@@ -350,6 +352,7 @@ module zynq_sys_wrapper
   wire [7:7]gpio_0_tri_t_7;
   wire [8:8]gpio_0_tri_t_8;
   wire [9:9]gpio_0_tri_t_9;
+  wire hdmi_clk;
   wire hdmi_out_active_video;
   wire [15:0]hdmi_out_data;
   wire hdmi_out_field;
@@ -727,6 +730,7 @@ module zynq_sys_wrapper
         .IIC_0_sda_i(iic_0_sda_i),
         .IIC_0_sda_o(iic_0_sda_o),
         .IIC_0_sda_t(iic_0_sda_t),
+        .hdmi_clk(hdmi_clk),
         .hdmi_out_active_video(hdmi_out_active_video),
         .hdmi_out_data(hdmi_out_data),
         .hdmi_out_field(hdmi_out_field),

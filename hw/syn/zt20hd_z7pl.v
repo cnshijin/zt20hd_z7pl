@@ -14,7 +14,7 @@
 
 module zt20hd_z7pl (/*AUTOARG*/
                     // Outputs
-                    hdmi_out_active, hdmi_out_data, hdmi_out_hsync, hdmi_out_vsync,
+                    hdmi_clk, hdmi_out_active, hdmi_out_data, hdmi_out_hsync, hdmi_out_vsync,
                     // Inouts
                     DDR_addr, DDR_ba, DDR_cas_n, DDR_ck_n, DDR_ck_p, DDR_cke, DDR_cs_n, DDR_dm,
                     DDR_dq, DDR_dqs_n, DDR_dqs_p, DDR_odt, DDR_ras_n, DDR_reset_n, DDR_we_n,
@@ -43,6 +43,7 @@ module zt20hd_z7pl (/*AUTOARG*/
    inout          FIXED_IO_ps_clk;
    inout          FIXED_IO_ps_porb;
    inout          FIXED_IO_ps_srstb;
+   output         hdmi_clk;
    output         hdmi_out_active;
    output [15:0]  hdmi_out_data;
    output         hdmi_out_hsync;
@@ -53,6 +54,7 @@ module zt20hd_z7pl (/*AUTOARG*/
    wire [63:0]    zynq_sys_inst_emio;
 
    zynq_sys_wrapper zynq_sys_inst (// Outputs
+                                   .hdmi_clk            (hdmi_clk),
                                    .hdmi_out_active_video(hdmi_out_active),
                                    .hdmi_out_data       (hdmi_out_data[15:0]),
                                    .hdmi_out_field      (),
