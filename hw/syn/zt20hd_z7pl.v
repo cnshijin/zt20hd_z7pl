@@ -51,8 +51,6 @@ module zt20hd_z7pl (/*AUTOARG*/
    inout          iic_0_scl_io;
    inout          iic_0_sda_io;
 
-   wire [63:0]    zynq_sys_inst_emio;
-
    zynq_sys_wrapper zynq_sys_inst (// Outputs
                                    .hdmi_clk            (hdmi_clk),
                                    .hdmi_out_active_video(hdmi_out_active),
@@ -84,9 +82,8 @@ module zt20hd_z7pl (/*AUTOARG*/
                                    .FIXED_IO_ps_clk     (FIXED_IO_ps_clk),
                                    .FIXED_IO_ps_porb    (FIXED_IO_ps_porb),
                                    .FIXED_IO_ps_srstb   (FIXED_IO_ps_srstb),
-                                   .gpio_0_tri_io       (zynq_sys_inst_emio),
-                                   .iic_0_scl_io        (iic_0_scl_io),
-                                   .iic_0_sda_io        (iic_0_sda_io));
+                                   .IIC_0_scl_io        (iic_0_scl_io),
+                                   .IIC_0_sda_io        (iic_0_sda_io));
 
 endmodule
 
